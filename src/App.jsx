@@ -217,21 +217,10 @@ function Hero() {
   return (
     <section className="hero hero-video-section" id="inicio" aria-labelledby="hero-title">
       <HeroVideo />
-      <div className="container hero-top">
-        <p className="hero-location">
-          <Icon name="pin" />
-          VILA VELHA, ESPÍRITO SANTO
-        </p>
-        <p className="hero-top-note">
-          ESTÉTICA É O COMEÇO.
-          <br />
-          PROTEÇÃO É O PRÓXIMO NÍVEL.
-        </p>
-      </div>
       <div className="hero-title-wrap">
         <h1
           id="hero-title"
-          aria-label="Proteção premium para valorizar seu carro."
+          aria-label="Prote??o premium"
         >
           <span className="hero-word">
             <span aria-hidden="true">{Array.from('PROTEÇÃO').map((letter, index) => (
@@ -242,7 +231,6 @@ function Hero() {
           <span className="hero-word hero-premium">
             PREMIUM<span className="hero-period">.</span>
           </span>
-          <span className="sr-only">para valorizar seu carro.</span>
         </h1>
         <SketchStar className="hero-star" />
         <div className="cert-sticker">
@@ -253,15 +241,6 @@ function Hero() {
               GYEON<sup>®</sup>
             </strong>
           </span>
-        </div>
-      </div>
-      <div className="container hero-bottom">
-        <div>
-          <p className="hero-tagline">Para valorizar seu carro.</p>
-          <p className="hero-description">
-            PPF, vitrificação e películas de alta performance aplicados com
-            cuidado e precisão em Vila Velha.
-          </p>
         </div>
         <div className="hero-actions">
           <WhatsAppLink>Solicitar orçamento pelo WhatsApp</WhatsAppLink>

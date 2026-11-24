@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 
 const groups = [
-  ['.hero-location,.hero-top-note', 'label', 80],
   ['.hero-word', 'line', 140],
-  ['.hero .cert-sticker,.hero-bottom > div', 'rise', 90],
+  ['.hero .cert-sticker,.hero-actions', 'rise', 90],
   ['.section-label', 'label', 0],
   ['.motion-line', 'line', 75],
   ['.about-seal,.about-copy', 'rise', 110],
