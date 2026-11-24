@@ -220,7 +220,7 @@ function Hero() {
       <div className="hero-title-wrap">
         <h1
           id="hero-title"
-          aria-label="Prote??o premium"
+          aria-label="Proteção premium"
         >
           <span className="hero-word">
             <span aria-hidden="true">{Array.from('PROTEÇÃO').map((letter, index) => (
