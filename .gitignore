@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.vercel/
+.openai/
+.qa/
+.prerender/
+design/source-videos/
+.env*
+!.env.example
+*.log
+*.tar.gz
+*.zip

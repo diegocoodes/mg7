@@ -1,0 +1,93 @@
+.about-seal.animated-logo {
+  width: 100%;
+  max-width: 400px;
+  min-width: 0;
+  min-height: 0;
+  margin-inline: auto;
+}
+.animated-logo-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  isolation: isolate;
+}
+.animated-logo-stage::before {
+  content: '';
+  position: absolute;
+  inset: 12% 3%;
+  z-index: -1;
+  background: radial-gradient(ellipse, #d719121a, transparent 68%);
+}
+.animated-logo-orbit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.animated-logo-orbit > ellipse { fill: none; }
+.logo-orbit-guide { stroke: #e6b82e33; stroke-width: .75; }
+.logo-orbit-trail {
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-dasharray: 12 88;
+  filter: drop-shadow(0 0 3px currentColor);
+}
+.logo-orbit-red { color: #f04d3d; stroke-dashoffset: 0; }
+.logo-orbit-gold { color: var(--brand-gold); stroke-dashoffset: -50; }
+.animated-logo-mark { position: relative; width: 84%; }
+.animated-logo-mark > img { display: block; width: 100%; height: auto; }
+.animated-logo-sheen { display: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-active .animated-logo.is-revealed .animated-logo-mark {
+    translate: 0 var(--scroll-shift, 0px);
+    animation: mg7-logo-reveal 950ms cubic-bezier(.16,1,.3,1) backwards;
+  }
+  .animated-logo .logo-orbit-red { animation: mg7-logo-orbit-red 9s linear infinite paused; }
+  .animated-logo .logo-orbit-gold { animation: mg7-logo-orbit-gold 9s linear infinite paused; }
+  .animated-logo-mark > img,
+  .animated-logo-sheen { animation: mg7-logo-float 6s ease-in-out infinite paused; }
+  .animated-logo-sheen {
+    display: block;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    mask: url('/assets/mg7-logo.webp') center / contain no-repeat;
+    -webkit-mask: url('/assets/mg7-logo.webp') center / contain no-repeat;
+  }
+  .animated-logo-sheen::before {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    background: linear-gradient(110deg, transparent 40%, #fff9 50%, transparent 60%);
+    transform: translateX(-100%);
+    animation: mg7-logo-sheen 7s ease-in-out infinite paused;
+  }
+  .animated-logo[data-running="true"] .logo-orbit-trail,
+  .animated-logo[data-running="true"] .animated-logo-mark > img,
+  .animated-logo[data-running="true"] .animated-logo-sheen,
+  .animated-logo[data-running="true"] .animated-logo-sheen::before { animation-play-state: running; }
+  @keyframes mg7-logo-reveal {
+    from { opacity: 0; scale: .9; transform: perspective(700px) rotateY(-12deg); }
+    to { opacity: 1; scale: 1; transform: perspective(700px) rotateY(0); }
+  }
+  @keyframes mg7-logo-float {
+    0%, 100% { translate: 0 3px; rotate: -.5deg; }
+    50% { translate: 0 -4px; rotate: .5deg; }
+  }
+  @keyframes mg7-logo-sheen {
+    0%, 12% { transform: translateX(-100%); opacity: 0; }
+    18% { opacity: .65; }
+    42% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+  @keyframes mg7-logo-orbit-red { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -100; } }
+  @keyframes mg7-logo-orbit-gold { from { stroke-dashoffset: -50; } to { stroke-dashoffset: -150; } }
+}
+@media (max-width: 600px) { .about-seal.animated-logo { max-width: 300px; } }

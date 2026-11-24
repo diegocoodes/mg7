@@ -1,0 +1,38 @@
+.ink-section {
+  position: relative;
+  isolation: isolate;
+}
+.ink-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+.ink-background > .ink-canvas-root {
+  position: absolute;
+  inset: 0;
+  opacity: 0.44;
+}
+.ink-static {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 25% 25%, #64110c35, transparent 62%), radial-gradient(ellipse at 85% 65%, #d719121a, transparent 60%);
+}
+.ink-background-gold > .ink-canvas-root {
+  opacity: 0.32;
+}
+.ink-background-gold .ink-static {
+  background: radial-gradient(ellipse at 15% 45%, #a8781528, transparent 58%), radial-gradient(ellipse at 85% 75%, #5a1b101f, transparent 64%);
+}
+.ink-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #111215 0%, #11121500 18%, #11121500 80%, #111215 100%);
+}
+@media (max-width: 700px) {
+  .ink-background > .ink-canvas-root { opacity: 0.34; }
+  .ink-background-gold > .ink-canvas-root { opacity: 0.26; }
+}

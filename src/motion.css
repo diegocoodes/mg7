@@ -1,0 +1,143 @@
+.motion-line { display: inline-block; }
+.reviews-inner h2 > .motion-line:first-child { color: var(--ink); }
+.services-section.ink-section { background: var(--bg); }
+.reading-progress {
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  pointer-events: none;
+}
+.reading-progress > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--brand-red);
+  transform: scaleX(var(--reading-progress, 0));
+  transform-origin: left;
+}
+.gallery-image { display: block; width: 100%; height: 100%; overflow: hidden; }
+.gallery-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.6) brightness(.85);
+}
+.gallery-spotlight { display: none; }
+.motion-letter { display: inline-block; }
+
+/* Individual transforms preserve the existing collage rotations. */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-active .hero-word.is-revealed .motion-letter {
+    animation: mg7-letter-in 700ms calc(var(--letter-index) * 45ms) cubic-bezier(.16,1,.3,1) backwards;
+  }
+  .motion-active .hero .cert-sticker { position: relative; inset: auto; }
+  .motion-active .hero .cert-sticker.is-revealed::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border: 1px solid var(--brand-gold);
+    border-radius: inherit;
+    pointer-events: none;
+    animation: mg7-cert-ring 1800ms 400ms 2 ease-out both;
+  }
+  .motion-active .gallery-image > img {
+    translate: 0 var(--photo-drift, 0px);
+    scale: 1.12;
+    transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transition: transform 250ms ease, filter 300ms ease;
+  }
+  .motion-active .gallery-item:is(:hover,:focus-visible) .gallery-image > img { filter: saturate(.95) brightness(.98); }
+  .motion-active .lightbox[open] { animation: mg7-dialog-in 380ms cubic-bezier(.16,1,.3,1) backwards; }
+  .motion-active .lightbox[open]::backdrop { animation: mg7-backdrop-in 300ms ease backwards; }
+  .motion-active .mobile-nav:not([hidden]) > a { animation: mg7-menu-in 360ms ease backwards; }
+  .motion-active .mobile-nav:not([hidden]) > a:nth-child(2) { animation-delay: 40ms; }
+  .motion-active .mobile-nav:not([hidden]) > a:nth-child(3) { animation-delay: 80ms; }
+  .motion-active .mobile-nav:not([hidden]) > a:nth-child(4) { animation-delay: 120ms; }
+  .motion-active .mobile-nav:not([hidden]) > a:nth-child(5) { animation-delay: 160ms; }
+  .motion-active .mobile-nav:not([hidden]) > a:nth-child(6) { animation-delay: 200ms; }
+  .motion-active .mobile-nav:focus-within > a { animation: none; }
+  .motion-active .review-card { transition: border-color 250ms ease, background-color 250ms ease; }
+  .motion-active .review-card:is(:hover,:focus-within) { border-color: var(--brand-gold); background-color: #17191c; }
+  .motion-active .sketch-star {
+    translate: 0 var(--scroll-shift, 0px);
+    rotate: var(--scroll-turn, 0deg);
+  }
+  .motion-active .about-seal > img { translate: 0 var(--scroll-shift, 0px); }
+  .motion-active .gallery-band::before { translate: 0 calc(var(--scroll-shift, 0px) * -.6); }
+  .motion-active .manifesto .outline-text {
+    background: linear-gradient(var(--ink), var(--ink)) left / var(--text-fill, 100%) 100% no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .motion-active .button {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .motion-active .button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(110deg, transparent 30%, #fff3 49%, transparent 68%);
+    transform: translateX(-140%);
+  }
+  .motion-active .button:is(:hover,:focus-visible)::after,
+  .motion-active .hero-actions.is-revealed .button::after {
+    animation: mg7-light-pass 850ms ease both;
+  }
+  .motion-active .hero-actions.is-revealed .button::after { animation-delay: 550ms; }
+  .motion-active .gallery-item { overflow: hidden; }
+  .motion-active .gallery-item::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(115deg, transparent 30%, #f4f2ee26 50%, transparent 68%);
+    transform: translateX(-140%);
+  }
+  .motion-active .gallery-item.is-revealed::before { animation: mg7-light-pass 1200ms 250ms ease both; }
+  .motion-active .subtle-link .icon,
+  .motion-active .service-tab .icon { transition: rotate 350ms ease; }
+  .motion-active .subtle-link:is(:hover,:focus-visible) .icon { rotate: 90deg; }
+  .motion-active .service-tab:is(:hover,:focus-visible) .icon { rotate: 90deg; }
+  .motion-active .service-tab { transition: background-color 220ms ease, color 220ms ease; }
+  @keyframes mg7-light-pass {
+    0% { transform: translateX(-140%); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateX(140%); opacity: 0; }
+  }
+  @keyframes mg7-letter-in {
+    from { opacity: 0; translate: 0 45%; rotate: 5deg; }
+    to { opacity: 1; translate: 0 0; rotate: 0deg; }
+  }
+  @keyframes mg7-cert-ring {
+    from { opacity: .6; scale: 1; }
+    to { opacity: 0; scale: 1.13; }
+  }
+  @keyframes mg7-dialog-in {
+    from { opacity: 0; scale: .96; translate: 0 16px; }
+    to { opacity: 1; scale: 1; translate: 0 0; }
+  }
+  @keyframes mg7-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes mg7-menu-in { from { opacity: 0; translate: 0 -10px; } to { opacity: 1; translate: 0 0; } }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .motion-active .gallery-spotlight {
+    display: block;
+    position: absolute;
+    inset: 6px;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    background: radial-gradient(circle 140px at var(--pointer-x, 50%) var(--pointer-y, 50%), #fff2, transparent 75%);
+    transition: opacity 250ms ease;
+  }
+  .motion-active .gallery-item.has-pointer .gallery-spotlight { opacity: 1; }
+}
+@media print {
+  [data-motion] { opacity: 1 !important; translate: none !important; scale: none !important; }
+}

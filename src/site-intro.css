@@ -1,0 +1,51 @@
+.site-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: #0b0d0f;
+  pointer-events: none;
+  animation: mg7-site-intro-exit 700ms 950ms cubic-bezier(.76,0,.24,1) forwards;
+}
+.site-intro-brand {
+  position: relative;
+  width: min(320px, 68vw);
+  animation: mg7-site-intro-brand 600ms cubic-bezier(.16,1,.3,1) both;
+}
+.site-intro-brand > img { display: block; width: 100%; height: auto; }
+.site-intro-light {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  mask: url('/assets/mg7-logo.webp') center / contain no-repeat;
+  -webkit-mask: url('/assets/mg7-logo.webp') center / contain no-repeat;
+}
+.site-intro-light::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(110deg, transparent 40%, #fff9 50%, transparent 60%);
+  animation: mg7-site-intro-light 900ms 200ms ease-in-out both;
+}
+.site-intro-line {
+  position: absolute;
+  height: 1px;
+  left: 10%;
+  right: 10%;
+  bottom: -28px;
+  background: linear-gradient(90deg, transparent, var(--brand-red), var(--brand-gold), transparent);
+  animation: mg7-site-intro-line 900ms ease both;
+}
+@keyframes mg7-site-intro-brand {
+  from { opacity: 0; transform: translateY(12px) scale(.94); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes mg7-site-intro-exit { to { transform: translateY(-100%); visibility: hidden; } }
+@keyframes mg7-site-intro-light {
+  from { transform: translateX(-100%); opacity: 0; }
+  30% { opacity: .6; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+@keyframes mg7-site-intro-line { from { opacity: 0; transform: scaleX(0); } to { opacity: 1; transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce), print { .site-intro { display: none; } }
