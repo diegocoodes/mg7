@@ -8,7 +8,6 @@ import "./video.css";
 import './ink.css';
 import './hero-video.css';
 import './motion.css';
-import './animated-logo.css';
 import './site-intro.css';
 
 const root = document.getElementById("root");

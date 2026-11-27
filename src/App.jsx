@@ -5,7 +5,6 @@ import ServiceVideo from "./ServiceVideo.jsx";
 import InkBackground from './InkBackground';
 import HeroVideo from './HeroVideo';
 import useSiteMotion from './useSiteMotion';
-import AnimatedLogo from './AnimatedLogo';
 import SiteIntro from './SiteIntro';
 import ContactMap from './ContactMap';
 
@@ -272,7 +271,20 @@ function About() {
           </span>
         </h2>
         <div className="about-bottom">
-          <AnimatedLogo />
+          <figure className="about-owner">
+            <img
+              src="/assets/mg7-proprietario.webp"
+              width="951"
+              height="1199"
+              alt="Proprietário da MG’7 Studio Detail no estúdio, usando luvas e segurando um produto GYEON ao lado de um veículo."
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>
+              <span>QUEM CUIDA DE CADA DETALHE</span>
+              <strong>Proprietário da MG’7 Studio Detail</strong>
+            </figcaption>
+          </figure>
           <div className="about-copy">
             <p>
               Somos a <strong>MG’7 Studio Detail.</strong> Especialistas em

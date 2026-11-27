@@ -50,7 +50,7 @@ npm start
 
 - Hero com vídeo local, sem som, em loop e sem controles visíveis; versão menor para celular.
 - Abertura animada com o logo, que pode ser pulada ao clicar ou usar o teclado.
-- Seção Essência com o logo original animado, brilho e aro em vermelho e dourado.
+- Seção Essência com foto do proprietário fornecida pela empresa, em WebP e com enquadramento responsivo.
 - Categorias de PPF, vitrificação e películas, com vídeos próprios e luzes nas bordas.
 - Background vermelho nos serviços e dourado no contato, com alternativa estática sem WebGL.
 - Galeria ampliável, animações de entrada e reflexos nas imagens.
@@ -81,6 +81,7 @@ vercel.json          Configuração de publicação
 - Vídeo principal e poster: `src/HeroVideo.jsx` e arquivos `hero-video*` em `public/assets/`.
 - Vídeos dos serviços: `ppf.mp4`, `vitrificação.mp4` e `pelicula.mp4` em `public/assets/`.
 - Logo restaurado: `public/assets/mg7-logo.webp`.
+- Foto do proprietário na seção Essência: `public/assets/mg7-proprietario.webp`.
 
 WhatsApp: **(27) 99780-6961**. Endereço: **R. Henrique Laranja, 44 — Olaria, Vila Velha — ES, 29100-350**. Instagram: [@mg7studiodetail](https://www.instagram.com/mg7studiodetail/).
 

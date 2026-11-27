@@ -5,7 +5,7 @@ const groups = [
   ['.hero .cert-sticker,.hero-actions', 'rise', 90],
   ['.section-label', 'label', 0],
   ['.motion-line', 'line', 75],
-  ['.about-seal,.about-copy', 'rise', 110],
+  ['.about-seal,.about-owner,.about-copy', 'rise', 110],
   ['.service-tab', 'label', 65],
   ['.service-video', 'media', 0],
   ['.service-content > *', 'rise', 55],
