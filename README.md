@@ -56,6 +56,7 @@ npm start
 - Galeria ampliável, animações de entrada e reflexos nas imagens.
 - Avaliações reais fornecidas pela empresa, com faixa animada e controle de pausa.
 - Formulário que prepara uma mensagem para WhatsApp; o envio é confirmado no próprio WhatsApp.
+- Mapa interativo na seção de contato, com carregamento sob demanda e botão de rotas no Google Maps.
 - Navegação por teclado e respeito à preferência de redução de movimento.
 - Imagens WebP e fontes locais; vídeos e efeitos pausam quando saem da tela.
 

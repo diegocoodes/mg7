@@ -1124,8 +1124,50 @@ sup {
 .contact-grid {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  gap: 100px;
+  gap: 56px 100px;
   align-items: start;
+}
+.contact-map {
+  grid-column: 1 / -1;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--brand-gold);
+  border-radius: 12px;
+  background: var(--bg);
+}
+.contact-map-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: clamp(20px, 3vw, 32px);
+}
+.contact-map-heading h3 {
+  margin: 0 0 10px;
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+.contact-map-heading address {
+  color: var(--muted);
+  font-size: 1rem;
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+.contact-map-heading .button {
+  min-height: 48px;
+  font-size: 0.875rem;
+}
+.contact-map-frame {
+  display: block;
+  width: 100%;
+  height: clamp(300px, 34vw, 420px);
+  border: 0;
+  background: var(--surface);
+  color-scheme: light;
 }
 .contact-copy {
   position: relative;

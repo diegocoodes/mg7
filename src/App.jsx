@@ -7,6 +7,7 @@ import HeroVideo from './HeroVideo';
 import useSiteMotion from './useSiteMotion';
 import AnimatedLogo from './AnimatedLogo';
 import SiteIntro from './SiteIntro';
+import ContactMap from './ContactMap';
 
 function Icon({ name, className = "" }) {
   const paths = {
@@ -838,6 +839,7 @@ function Contact() {
           <SketchStar className="contact-star" />
         </div>
         <QuoteForm />
+        <ContactMap />
       </div>
     </section>
   );
